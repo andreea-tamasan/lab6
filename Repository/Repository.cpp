@@ -20,50 +20,27 @@ Square& Repo::getSquare(float a,float b,float c ,float d) {
         this->squares.push_back(S);
     }
 
-    //Square &Repo::updateSquare(Square S) {
-    //    Square &toUpdate = getSquare(S.get_Length());
-    //}
-
 std::vector<Square> Repo::get_all() {
     return squares;
 }
-//
-//void Repo::deleteSquare(Square e) {
-//
-//}
-//
-//Square Repo::getBiggestEntity() {
-//    return Square();
-//}
-//
-//vector<Square> Repo::getMaxEqualEntitiesSequence() {
-//    return vector<Square>();
-//}
+
+Square &Repo::getSquareById(int id) {
+    for (Square &S: squares)
+        if (S.get_id() == id)
+            return S;
+    throw std::runtime_error("No entity with specified coordinates found");
+}
+
+float Repo::getSideById(int id) {
+    for(Square S: squares)
+        if (S.get_id() == id)
+        {
+        return S.get_Length();}}
+
+bool Repo::checkIfSquareInQuadranI(Square S) {
+    if(S.get_x1()>0 && S.get_y1()>0)
+        return true;
+    return false;
+}
 
 
-
-
-
-//Square Repo::getSquare(int id) {
-//    return Square();
-//}
-//
-//void Repo::addSquare(Square S) {
-//    return this->squares.push_back(S);
-//}
-//
-//Square Repo::getBiggestEntity() {
-//    return Square();
-//}
-//
-//vector<Square> Repo::getMaxEqualEntitiesSequence() {
-//    return vector<Square>();
-//}
-//
-//Square &Repo::updateEntity(Square S) {
-//    return <#initializer#>;
-//}
-//
-//void Repo::deleteEntity(Square e) {
-//
-//}

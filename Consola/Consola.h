@@ -10,45 +10,37 @@
  *Options of the program
  */
 void Options();
-void runMenu(Square v[]);
+void runMenu(Repo repo);
 
 /**
  * puts the squares in an array
  * @param n - number of squares
- * @param v - list of squares
+ * @param repo - vector of squares
  */
-void readValuesForSquare(int &n,Square v[],Repo& repo);
-
-/**
- * displays the square values in the array
- * @param n - number of squares
- * @param v - array of squares
- */
-void readValuesForSquare(int &n, Repo repo);
+void readValuesForSquare(int &n,Repo& repo);
 
 /**
  * gets the largest square in the array
  * @param n - number of squares
- * @param v - array of squares
- * @param maxim - maxim length of the side of a square in the array
+ * @param repo - vector of squares
+ * @param id_maxim - id of the square that has the longest side
  */
-void getTheLargestSquare(int n,Square v[],float &maxim);
+void getTheLargestSquare(int n,Repo repo,int& id_maxim);
 
 /**
  *
  * @param n - number of squares
- * @param f
- * @param start
- * @param end
+ * @param repo - vector of squares
+ * @param start - position of start
+ * @param end -  position of end
  */
-void getLongestSubarrayOfEqualSquares(int n,Square f[], int &start, int &end);
+void getLongestSubarrayOfEqualSquares(int n,Repo repo, int &start, int &end);
 
 /**
- *
+ * gets a vector of squares that are in quadran I
  * @param n - number of squares
- * @param v - array of squares
- * @param f
- * @param j
+ * @param repo - vector of squares
+ * @param j - the number of squares that are in quadran I
  */
-void checkIfSquareInQuadranI(int n,Square v[],Square f[],int &j);
+Repo checkIfSquareInQuadranI(int n,Repo repo,int &j);
 #endif //LAB4_CONSOLA_H

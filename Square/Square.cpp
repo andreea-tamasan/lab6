@@ -6,20 +6,23 @@
 #include <math.h>
 using namespace std;
 Square::Square() {
+    this->id = 0;
     this->x1= 0.0;
     this->x2= 0.0;
     this->y1= 0.0;
     this->y2= 0.0;
 }
 
-Square::Square(float x1, float y1, float x2, float y2){
+Square::Square(int id, float x1, float y1, float x2, float y2){
+    this->id =id;
     this->x1 =x1;
     this->y1 =y1;
     this->x2 =x2;
     this->y2 =y2;
 }
 
-void Square::set_coordinates(float a, float b, float c, float d) {
+void Square::set_coordinates_and_id(int id, float a, float b, float c, float d) {
+    this -> id = id;
     this -> x1= a;
     this -> x2= b;
     this -> y1= c;
@@ -27,11 +30,17 @@ void Square::set_coordinates(float a, float b, float c, float d) {
 }
 
 Square::Square(const Square& S){
+    this->id = S.id;
     this->x1 = S.x1;
     this->y1 = S.y1;
     this->x2 = S.x2;
     this->y2 = S.y2;
 }
+
+int Square::get_id() {
+    return this->id;
+}
+
 float Square::get_x1() {
     return this->x1;
 }
@@ -74,6 +83,7 @@ Square::~Square(){
 }
 
 Square& Square::operator=(const Square& S){
+    this->id=S.id;
     this->x1=S.x1;
     this->x2=S.x2;
     this->y1=S.y1;

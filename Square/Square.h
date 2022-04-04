@@ -7,6 +7,7 @@
 #include <iostream>
 class Square{
 private:
+    int id;
     float x1, x2, y1,y2;
 public:
     /**
@@ -21,7 +22,7 @@ public:
      * @param x2 - coordinates point 2
      * @param y2 - coordinates point 2
      */
-    Square(float x1, float y1, float x2, float y2);
+    Square(int id,float x1, float y1, float x2, float y2);
 
     /**
      * copy constructor
@@ -33,7 +34,13 @@ public:
      * sets coordinates
      * @params - coordinates of points
      */
-    void set_coordinates(float a,float b,float c, float d);
+    void set_coordinates_and_id(int id, float a,float b,float c, float d);
+
+    /**
+     * gets the id of a square
+     * @return the id of a square
+     */
+    int get_id();
 
     /**
      * gets the first coordinate of the bottom down point
